@@ -20,7 +20,7 @@ Add the dependency
 
 ```
 	dependencies {
-	        implementation 'com.github.liyuzhao:filepicker:v1.0.1'
+	        implementation 'com.github.liyuzhao:filepicker:v1.0.2'
 	}
 
 ```
