@@ -2,20 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.leon.lfilepickerlibrary">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application>
-        <activity android:name=".ui.LFilePickerActivity" />
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fp_provider_paths" />
-        </provider>
+        <activity android:name="com.leon.lfilepickerlibrary.ui.LFilePickerActivity" />
     </application>
 
 </manifest>
