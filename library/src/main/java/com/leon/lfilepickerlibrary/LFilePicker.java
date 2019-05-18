@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.StyleRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
 
 import com.leon.lfilepickerlibrary.model.ParamEntity;
 import com.leon.lfilepickerlibrary.ui.LFilePickerActivity;
@@ -17,7 +17,7 @@ import com.leon.lfilepickerlibrary.ui.LFilePickerActivity;
 public class LFilePicker {
     private Activity mActivity;
     private Fragment mFragment;
-    private android.support.v4.app.Fragment mSupportFragment;
+    private androidx.fragment.app.Fragment mSupportFragment;
     private String mTitle;
     private String mTitleColor;
     private int theme = R.style.LFileTheme;
@@ -64,7 +64,7 @@ public class LFilePicker {
      * @param supportFragment
      * @return
      */
-    public LFilePicker withSupportFragment(android.support.v4.app.Fragment supportFragment) {
+    public LFilePicker withSupportFragment(androidx.fragment.app.Fragment supportFragment) {
         this.mSupportFragment = supportFragment;
         return this;
     }

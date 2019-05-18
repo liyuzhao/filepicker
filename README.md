@@ -2,6 +2,7 @@
 
 >fork from:[https://github.com/leonHua/LFilePicker](https://github.com/leonHua/LFilePicker)
 
+>2.x migrate to androidx
 
 #### Step 1.
 Add it in your root build.gradle at the end of repositories:
@@ -20,7 +21,7 @@ Add the dependency
 
 ```
 	dependencies {
-	        implementation 'com.github.liyuzhao:filepicker:v1.0.2'
+	        implementation 'com.github.liyuzhao:filepicker:v2.0.0'
 	}
 
 ```
