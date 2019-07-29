@@ -35,6 +35,7 @@ public class LFilePicker {
     private String mStartPath;
     private boolean mIsGreater = true;//是否大于
     private long mFileSize;
+    private boolean showHidden = true; // 显示隐藏文件
 
     /**
      * 绑定Activity
@@ -253,6 +254,16 @@ public class LFilePicker {
         return this;
     }
 
+    /**
+     * 显示隐藏文件
+     * @param hidden
+     * @return
+     */
+    public LFilePicker withShowHidden(boolean hidden) {
+        this.showHidden = hidden;
+        return this;
+    }
+
     public void start() {
         if (mActivity == null && mFragment == null && mSupportFragment == null) {
             throw new RuntimeException("You must pass Activity or Fragment by withActivity or withFragment or withSupportFragment method");
@@ -302,6 +313,7 @@ public class LFilePicker {
         paramEntity.setPath(mStartPath);
         paramEntity.setFileSize(mFileSize);
         paramEntity.setGreater(mIsGreater);
+        paramEntity.setShowHidden(showHidden);
         Bundle bundle = new Bundle();
         bundle.putSerializable("param", paramEntity);
         return bundle;

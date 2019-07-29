@@ -25,6 +25,7 @@ public class ParamEntity implements Serializable {
     private String path;
     private long fileSize;
     private boolean isGreater;
+    private boolean showHidden;
 
     public String getTitle() {
         return title;
@@ -154,5 +155,13 @@ public class ParamEntity implements Serializable {
 
     public void setGreater(boolean greater) {
         isGreater = greater;
+    }
+
+    public boolean isShowHidden() {
+        return showHidden;
+    }
+
+    public void setShowHidden(boolean showHidden) {
+        this.showHidden = showHidden;
     }
 }

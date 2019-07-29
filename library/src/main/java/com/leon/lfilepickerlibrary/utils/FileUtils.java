@@ -69,11 +69,27 @@ public class FileUtils {
      * @return List<File>
      */
     public static List<File> getFileList(String path, FileFilter filter, boolean isGreater, long targetSize) {
+        return getFileList(path, filter, isGreater, targetSize, false);
+    }
+
+    /**
+     * 根据地址获取当前地址下的所有目录和文件，并且排序,同时过滤掉不符合大小要求的文件
+     *
+     * @param path
+     * @return List<File>
+     */
+    public static List<File> getFileList(String path, FileFilter filter, boolean isGreater, long targetSize, boolean showHidden) {
         List<File> list = FileUtils.getFileListByDirPath(path, filter);
         //进行过滤文件大小
         Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             File f = (File) iterator.next();
+            if (!showHidden) {
+                if (f.isHidden()) {
+                    iterator.remove();
+                    continue;
+                }
+            }
             if (f.isFile()) {
                 //获取当前文件大小
                 long size = FileUtils.getFileLength(f);

@@ -68,7 +68,7 @@ public class LFilePickerActivity extends AppCompatActivity {
         }
         mTvPath.setText(mPath);
         mFilter = new LFileFilter(mParamEntity.getFileTypes());
-        mListFiles = FileUtils.getFileList(mPath, mFilter, mParamEntity.isGreater(), mParamEntity.getFileSize());
+        mListFiles = FileUtils.getFileList(mPath, mFilter, mParamEntity.isGreater(), mParamEntity.getFileSize(), mParamEntity.isShowHidden());
         mPathAdapter = new PathAdapter(mListFiles, this, mFilter, mParamEntity.isMutilyMode(), mParamEntity.isGreater(), mParamEntity.getFileSize());
         mRecylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mPathAdapter.setmIconStyle(mParamEntity.getIconStyle());
@@ -141,7 +141,7 @@ public class LFilePickerActivity extends AppCompatActivity {
                 }
 
                 mPath = tempPath;
-                mListFiles = FileUtils.getFileList(mPath, mFilter, mParamEntity.isGreater(), mParamEntity.getFileSize());
+                mListFiles = FileUtils.getFileList(mPath, mFilter, mParamEntity.isGreater(), mParamEntity.getFileSize(), mParamEntity.isShowHidden());
                 mPathAdapter.setmListData(mListFiles);
                 mPathAdapter.updateAllSelelcted(false);
                 mIsAllSelected = false;
@@ -233,7 +233,7 @@ public class LFilePickerActivity extends AppCompatActivity {
         mPath = mListFiles.get(position).getAbsolutePath();
         setShowPath(mPath);
         //更新数据源
-        mListFiles = FileUtils.getFileList(mPath, mFilter, mParamEntity.isGreater(), mParamEntity.getFileSize());
+        mListFiles = FileUtils.getFileList(mPath, mFilter, mParamEntity.isGreater(), mParamEntity.getFileSize(), mParamEntity.isShowHidden());
         mPathAdapter.setmListData(mListFiles);
         mPathAdapter.notifyDataSetChanged();
         mRecylerView.scrollToPosition(0);
